@@ -19,3 +19,5 @@ https://github.com/mybatis/mybatis-3/releases
     11节 测试功能呢
 2024-11-27
     11节，完成测试功能，获取sqlSession访问db，插入数据成功
+2024-11-28
+    14节，完成增删改查的测试功能，添加日志，使用ResultType

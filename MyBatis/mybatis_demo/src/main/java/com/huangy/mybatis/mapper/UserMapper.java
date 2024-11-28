@@ -1,5 +1,9 @@
 package com.huangy.mybatis.mapper;
 
+import com.huangy.mybatis.pojo.User;
+
+import java.util.List;
+
 public interface UserMapper {
 
     /**
@@ -24,4 +28,8 @@ public interface UserMapper {
      * 删除用户信息
      */
     void deleteUser();
+
+    User getUserById();
+
+    List<User> getAllUser();
 }

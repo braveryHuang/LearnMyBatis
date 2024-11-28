@@ -1,6 +1,7 @@
 package com.huangy.mybatis.test;
 
 import com.huangy.mybatis.mapper.UserMapper;
+import com.huangy.mybatis.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -9,6 +10,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 public class MyBatisTest {
 
@@ -52,6 +54,10 @@ public class MyBatisTest {
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         //测试功能
         //mapper.updateUser();
-        mapper.deleteUser();
+        //mapper.deleteUser();
+        /*User user = mapper.getUserById();
+        System.out.println("user = " + user);*/
+        List<User> users = mapper.getAllUser();
+        users.forEach(System.out::println);
     }
 }
