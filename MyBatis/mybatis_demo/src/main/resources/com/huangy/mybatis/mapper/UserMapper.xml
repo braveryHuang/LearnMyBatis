@@ -27,11 +27,11 @@
     ResultType 来设置默认的映射关系（实体属性名和DB中的字段名保持一致）
     ResultMap 来设置自定义的映射关系（属性名和字段名不一致）
     -->
-    <select id="getUserById" resultType="com.huangy.mybatis.pojo.User">
+    <select id="getUserById" resultType="User">
         select * from t_user where id = 4
     </select>
 
-    <select id="getAllUser" resultType="com.huangy.mybatis.pojo.User">
+    <select id="getAllUser" resultType="User">
         select * from t_user
     </select>
 

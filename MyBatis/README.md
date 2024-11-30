@@ -21,3 +21,5 @@ https://github.com/mybatis/mybatis-3/releases
     11节，完成测试功能，获取sqlSession访问db，插入数据成功
 2024-11-28
     14节，完成增删改查的测试功能，添加日志，使用ResultType
+2024-11-30
+    15节-18节，核心配置文件详解
