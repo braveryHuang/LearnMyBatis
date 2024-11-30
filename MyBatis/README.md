@@ -23,3 +23,4 @@ https://github.com/mybatis/mybatis-3/releases
     14节，完成增删改查的测试功能，添加日志，使用ResultType
 2024-11-30
     15节-18节，核心配置文件详解
+    22节，完成之前内容的回顾，mapper，核心配置文件模版
