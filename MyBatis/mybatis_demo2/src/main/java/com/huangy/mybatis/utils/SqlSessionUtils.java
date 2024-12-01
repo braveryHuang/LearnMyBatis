@@ -13,6 +13,7 @@ public class SqlSessionUtils {
     public static SqlSession getSqlSession() {
         SqlSession sqlSession = null;
         try {
+            //Ctrl+Alt+V 自动生产变量名
             InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
             sqlSession = sqlSessionFactory.openSession(true);
