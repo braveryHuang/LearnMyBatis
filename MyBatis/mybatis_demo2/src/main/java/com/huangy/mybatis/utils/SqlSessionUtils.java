@@ -4,11 +4,14 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 public class SqlSessionUtils {
+
+    private static final Logger log = Logger.getLogger(SqlSessionUtils.class);
 
     public static SqlSession getSqlSession() {
         SqlSession sqlSession = null;
@@ -18,7 +21,7 @@ public class SqlSessionUtils {
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
             sqlSession = sqlSessionFactory.openSession(true);
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(e);
         }
         return sqlSession;
     }

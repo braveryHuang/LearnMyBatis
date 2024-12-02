@@ -8,4 +8,29 @@
         select * from t_user
     </select>
 
+    <select id="getUserByName" resultType="User">
+        <!--select * from t_user where name = #{aaa}-->
+        <!--select * from t_user where name = #{username}-->
+        <!--因为是字符串拼接，所以要加单引号，可以从debug信息中看出来-->
+        select * from t_user where name = '${username}'
+    </select>
+
+    <select id="checkLogin" resultType="User">
+        <!--select * from t_user where name = #{username} and password = #{password}-->
+        <!--select * from t_user where name = #{arg0} and password = #{arg1}-->
+        select * from t_user where name = #{param1} and password = #{param2}
+    </select>
+
+    <select id="checkLoginByMap" resultType="User">
+        select * from t_user where name = #{name} and password = #{password}
+    </select>
+
+    <insert id="insertUser">
+        insert into t_user values(null, #{name}, #{password}, #{age}, #{male}, #{email})
+    </insert>
+
+    <select id="checkLoginByParam" resultType="User">
+        select * from t_user where name = #{name} and password = #{password}
+    </select>
+
 </mapper>
