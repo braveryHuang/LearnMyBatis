@@ -26,3 +26,5 @@ https://github.com/mybatis/mybatis-3/releases
     22节，完成之前内容的回顾，mapper，核心配置文件模版
 2024-12-02
     23节-28节，参数如何传递；基本上归纳为两种方式，一种是用@Param，一种实体类型对象
+2024-12-05
+    30-33节，各种查询功能 @MapKey的使用 返回结果集，List，map
