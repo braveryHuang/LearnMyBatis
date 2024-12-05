@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huangy.mybatis.mapper.SelectMapper">
+
+    <!--User getUserById(@Param("id") Integer id);-->
+    <select id="getUserById" resultType="User">
+        select * from t_user where id = #{id}
+    </select>
+
+    <select id="getAllUser" resultType="User">
+        select * from t_user
+    </select>
+
+    <select id="getCount" resultType="java.lang.Integer">
+        select count(*) from t_user
+    </select>
+
+    <select id="getUserByIdToMap" resultType="map">
+        select * from t_user where id = #{id}
+    </select>
+
+    <!--resultType="list"这样的形式是不正确的配置
+    因为MyBatis需要知道每一行结果应该映射到哪个Java对象，而不是直接映射为一个列表
+    resultType="map" 是一种有效的配置。
+    在MyBatis中，resultType="map"用于将查询结果的每一行映射为一个Map对象，其中列名作为键，列值作为值
+    -->
+    <select id="getAllUserToMap" resultType="map">
+        select * from t_user
+    </select>
+
+</mapper>
