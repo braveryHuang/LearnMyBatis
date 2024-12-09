@@ -21,4 +21,9 @@ public interface SQLMapper {
      * 查询指定表中的数据
      */
     List<User> getUserByTableName(@Param("tableName") String tableName);
+
+    /**
+     * 添加用户信息
+     */
+    void insertUser(User user);
 }

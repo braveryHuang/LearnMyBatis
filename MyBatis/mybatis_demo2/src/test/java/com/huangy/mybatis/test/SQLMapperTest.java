@@ -29,10 +29,19 @@ public class SQLMapperTest {
     }
 
     @Test
-    public void testSelect() {
+    public void testGetUserByTableName() {
         SqlSession  sqlSession = SqlSessionUtils.getSqlSession();
         SQLMapper mapper = sqlSession.getMapper(SQLMapper.class);
         List<User> users = mapper.getUserByTableName("t_user");
         System.out.println(users);
+    }
+
+    @Test
+    public void testInsertUser() {
+        SqlSession  sqlSession = SqlSessionUtils.getSqlSession();
+        SQLMapper mapper = sqlSession.getMapper(SQLMapper.class);
+        User user = new User(0, "王五", "123", 23, '男', "abc@126.com");
+        mapper.insertUser(user);
+        System.out.println(user);
     }
 }
