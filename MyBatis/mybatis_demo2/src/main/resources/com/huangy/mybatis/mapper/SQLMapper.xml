@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huangy.mybatis.mapper.SQLMapper">
+
+    <select id="getUserByLike" resultType="User">
+        <!--select * from t_user where name like '%${username}%'-->
+        <!--select * from t_user where name like concat('%', #{username}, '%')-->
+        <!--课程中说：下面这种方式使用的最多； 但我个人倾向于使用concat这种方式-->
+        <!--查了GPT，也是推荐从concat，或者在java代码中拼接% 后传递给mybatis-->
+        select * from t_user where name like "%"#{username}"%"
+    </select>
+</mapper>
