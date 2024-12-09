@@ -16,4 +16,8 @@
         <!--#{}会自动加单引号，这样的sql不正确-->
         delete from t_user where id in (${ids})
     </delete>
+
+    <select id="getUserByTableName" resultType="User">
+        select * from ${tableName}
+    </select>
 </mapper>

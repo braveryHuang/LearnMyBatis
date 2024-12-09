@@ -27,4 +27,12 @@ public class SQLMapperTest {
         int result = mapper.deleteMore("1,2,3");
         System.out.println(result);
     }
+
+    @Test
+    public void testSelect() {
+        SqlSession  sqlSession = SqlSessionUtils.getSqlSession();
+        SQLMapper mapper = sqlSession.getMapper(SQLMapper.class);
+        List<User> users = mapper.getUserByTableName("t_user");
+        System.out.println(users);
+    }
 }
