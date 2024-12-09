@@ -29,4 +29,4 @@ https://github.com/mybatis/mybatis-3/releases
 2024-12-05
     30-33节，各种查询功能 @MapKey的使用 返回结果集，List，map
 2024-12-09
-    34节，模糊查询
+    34-38节，模糊查询、批量删除，动态表名，获取自增主键
