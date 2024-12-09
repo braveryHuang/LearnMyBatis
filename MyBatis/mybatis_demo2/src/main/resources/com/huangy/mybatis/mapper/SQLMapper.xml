@@ -11,4 +11,9 @@
         <!--查了GPT，也是推荐从concat，或者在java代码中拼接% 后传递给mybatis-->
         select * from t_user where name like "%"#{username}"%"
     </select>
+
+    <delete id="deleteMore">
+        <!--#{}会自动加单引号，这样的sql不正确-->
+        delete from t_user where id in (${ids})
+    </delete>
 </mapper>
