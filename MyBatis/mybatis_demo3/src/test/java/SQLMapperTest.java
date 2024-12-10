@@ -21,6 +21,11 @@ public class SQLMapperTest {
      *         <result property="sex" column="sex"/>
      *         <result property="email" column="email"/>
      *      </resultMap>
+     *
+     * 处理多对一的几种方式：
+     * a> 级联属性赋值
+     * b> association
+     * c> 分布查询
      */
 
     @Test
@@ -29,5 +34,23 @@ public class SQLMapperTest {
         EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
         List<Emp> list = mapper.getAllEmp();
         System.out.println(list);
+    }
+
+    @Test
+    public void testGetEmpAndDept() {
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
+        Emp emp = mapper.getEmpAndDept(5);
+        System.out.println(emp);
+    }
+
+    @Test
+    public void testGetEmpAndDeptByStep() {
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
+        Emp emp = mapper.getEmpAndDeptByStepOne(5);
+        System.out.println(emp.getEmpName());
+        System.out.println("++++++++++++++++++++++++++++++");
+        System.out.println(emp.getDept());
     }
 }

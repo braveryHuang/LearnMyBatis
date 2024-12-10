@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huangy.mybatis.mapper.DeptMapper">
+
+    <resultMap id="deptResultMap" type="Dept">
+        <id property="did" column="did"/>
+        <result property="deptName" column="dept_name"/>
+    </resultMap>
+
+    <select id="getEmpAndDeptByStepTwo" resultMap="deptResultMap">
+        select * from t_dept where did=#{did}
+    </select>
+
+</mapper>

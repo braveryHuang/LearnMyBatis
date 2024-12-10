@@ -10,4 +10,6 @@ public class Emp {
     private String sex;
     private String email;
     private int did;
+
+    private Dept dept;
 }
