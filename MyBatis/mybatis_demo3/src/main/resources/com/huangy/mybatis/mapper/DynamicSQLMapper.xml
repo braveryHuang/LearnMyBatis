@@ -12,7 +12,7 @@
         <result property="email" column="email"/>
     </resultMap>
 
-    <select id="getEmpByCondition" resultMap="empResultMap">
+    <select id="getEmpByConditionOne" resultMap="empResultMap">
         select * from t_emp where 1=1
         <if test="empName != null and empName != ''">
             emp_name = #{empName}
@@ -26,6 +26,25 @@
         <if test="email != null and email != ''">
             and email = #{email}
         </if>
+    </select>
+
+    <select id="getEmpByCondition" resultMap="empResultMap">
+        select * from t_emp
+        <where>
+            <if test="empName != null and empName != ''">
+                emp_name = #{empName}
+            </if>
+            <if test="age != null and age != ''">
+                and age = #{age}
+            </if>
+            <if test="sex != null and sex != ''">
+                and sex = #{sex}
+            </if>
+            <if test="email != null and email != ''">
+                and email = #{email}
+            </if>
+        </where>
+
     </select>
 
 </mapper>
