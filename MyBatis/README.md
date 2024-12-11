@@ -31,4 +31,7 @@ https://github.com/mybatis/mybatis-3/releases
 2024-12-09
     34-42节，模糊查询、批量删除，动态表名，获取自增主键；ResultMap的使用
 2024-12-10
-    43-45接，ResultMap表示一对多的关系，分布查询，以及延迟加载
+    43-45节，ResultMap表示一对多的关系，分布查询，以及延迟加载
+2024-12-11
+    46-47节，ResultMap表示多对一的关系，collection用法，分布查询用法
+
