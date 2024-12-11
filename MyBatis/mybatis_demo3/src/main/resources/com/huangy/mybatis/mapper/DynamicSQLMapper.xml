@@ -28,7 +28,7 @@
         </if>
     </select>
 
-    <select id="getEmpByCondition" resultMap="empResultMap">
+    <select id="getEmpByConditionTwo" resultMap="empResultMap">
         select * from t_emp
         <where>
             <if test="empName != null and empName != ''">
@@ -44,7 +44,23 @@
                 and email = #{email}
             </if>
         </where>
-
     </select>
 
+    <select id="getEmpByCondition" resultMap="empResultMap">
+        select * from t_emp
+        <trim prefix="where" suffixOverrides="and|or">
+            <if test="empName != null and empName != ''">
+                emp_name = #{empName} and
+            </if>
+            <if test="age != null and age != ''">
+                age = #{age} and
+            </if>
+            <if test="sex != null and sex != ''">
+                sex = #{sex} and
+            </if>
+            <if test="email != null and email != ''">
+                email = #{email} and
+            </if>
+        </trim>
+    </select>
 </mapper>
