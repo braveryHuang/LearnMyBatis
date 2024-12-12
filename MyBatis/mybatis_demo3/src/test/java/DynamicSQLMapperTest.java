@@ -33,9 +33,13 @@ public class DynamicSQLMapperTest {
      *  close：foreach标签所循环的所有内容的结束符
      *
      *  实际工作中，if，where，foreach用的比较多
+     *
+     *  6. sql标签
+     *  设置sql片段：<sql id="empColumns">eid, emp_name, age, sex, email</sql>
+     *  引用<include refid="empColumns"/>
      */
     @Test
-    public void testGetEmp() {
+    public void testGetEmpByCondition() {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession();
         DynamicSQLMapper mapper = sqlSession.getMapper(DynamicSQLMapper.class);
         List<Emp> emps = mapper.getEmpByCondition(new Emp(null, "张三", null, "男", "123@qq.com", -1, null));

@@ -46,8 +46,12 @@
         </where>
     </select>
 
+    <sql id="empColumns">
+        eid, emp_name, age, sex, email
+    </sql>
+
     <select id="getEmpByCondition" resultMap="empResultMap">
-        select * from t_emp
+        select <include refid="empColumns"/> from t_emp
         <trim prefix="where" suffixOverrides="and|or">
             <if test="empName != null and empName != ''">
                 emp_name = #{empName} and
@@ -104,4 +108,5 @@
             (null, #{emp.empName},#{emp.age},#{emp.sex},#{emp.email},null)
         </foreach>
     </insert>
+
 </mapper>

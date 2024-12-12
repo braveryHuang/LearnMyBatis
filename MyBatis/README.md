@@ -34,4 +34,6 @@ https://github.com/mybatis/mybatis-3/releases
     43-45节，ResultMap表示一对多的关系，分布查询，以及延迟加载
 2024-12-11
     46-47节，ResultMap表示多对一的关系，collection用法，分布查询用法
+2024-12-12
+    55节，动态sql学完
 
