@@ -86,4 +86,22 @@
             </choose>
         </where>
     </select>
+
+    <delete id="deleteMoreByArray">
+        delete from t_emp where
+        <foreach collection="eids" item="eid" separator="or">
+            eid = #{eid}
+        </foreach>
+        <!--delete from t_emp where eid in
+        <foreach collection="eids" item="eid" separator="," open="(" close=")">
+            #{eid}
+        </foreach>-->
+    </delete>
+
+    <insert id="insertMoreByList">
+        insert into t_emp values
+        <foreach collection="emps" item="emp" separator=",">
+            (null, #{emp.empName},#{emp.age},#{emp.sex},#{emp.email},null)
+        </foreach>
+    </insert>
 </mapper>
