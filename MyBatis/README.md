@@ -36,4 +36,13 @@ https://github.com/mybatis/mybatis-3/releases
     46-47节，ResultMap表示多对一的关系，collection用法，分布查询用法
 2024-12-12
     55节，动态sql学完
-
+2024-12-13
+    56节
+    MyBatis一级缓存
+        自动开启，SqlSession级别
+    MyBatis二级缓存
+        手动开启，SqlSessionFactory级别
+        二级缓存必须在SqlSession关闭或提交之后有效（没关闭前，先保存到一级缓存）
+    整合第三方缓存EHCache
+        代替二级缓存，一级缓存无法替代
+        只要会配置即可
