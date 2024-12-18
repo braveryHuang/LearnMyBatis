@@ -46,3 +46,10 @@ https://github.com/mybatis/mybatis-3/releases
     整合第三方缓存EHCache
         代替二级缓存，一级缓存无法替代
         只要会配置即可
+2024-12-18
+    逆向工程，清晰简洁版，奢华尊享版，QBC风格的操作
+    编写配置文件generatorConfig.xml，在MavenMBG项目的plugins中，双击mybatis-generator，生成mapper接口，实体类，和xml映射文件
+    
+    分页插件
+    
+    

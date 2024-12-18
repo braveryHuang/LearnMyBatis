@@ -51,7 +51,9 @@
     </sql>
 
     <select id="getEmpByCondition" resultMap="empResultMap">
-        select <include refid="empColumns"/> from t_emp
+        select
+        <include refid="empColumns"/>
+        from t_emp
         <trim prefix="where" suffixOverrides="and|or">
             <if test="empName != null and empName != ''">
                 emp_name = #{empName} and
