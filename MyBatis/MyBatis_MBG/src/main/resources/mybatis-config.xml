@@ -5,19 +5,14 @@
 <configuration>
     <properties resource="jdbc.properties"/>
 
-    <!--
-        设置mybatis全局配置
-    -->
-    <settings>
-        <!--将 _ 自动映射为驼峰，emp_name : empName-->
-        <!--<setting name="mapUnderscoreToCamelCase" value="true"/>-->
-        <!--开启延迟加载-->
-        <setting name="lazyLoadingEnabled" value="true"/>
-    </settings>
-
     <typeAliases>
         <package name="com.huangy.mybatis.pojo"/>
     </typeAliases>
+
+    <plugins>
+        <!--设置分页插件-->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
+    </plugins>
 
     <environments default="development">
         <environment id="development">

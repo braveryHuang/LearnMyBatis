@@ -51,5 +51,18 @@ https://github.com/mybatis/mybatis-3/releases
     编写配置文件generatorConfig.xml，在MavenMBG项目的plugins中，双击mybatis-generator，生成mapper接口，实体类，和xml映射文件
     
     分页插件
-    
-    
+    Page{count=true, pageNum=2, pageSize=4, startRow=4, endRow=8, total=10, pages=3, reasonable=false, pageSizeZero=false}
+    [Emp{eid=9, empName='张三3', age=null, sex='男', email='123@qq.com', did=null}, 
+    Emp{eid=10, empName='张三4', age=null, sex='男', email='123@qq.com', did=null}, 
+    Emp{eid=11, empName='张三1', age=null, sex='男', email='123@qq.com', did=null}, 
+    Emp{eid=12, empName='张三2', age=null, sex='男', email='123@qq.com', did=null}]
+
+
+    PageInfo{pageNum=2, pageSize=4, size=4, startRow=5, endRow=8, total=10, pages=3, 
+    list=Page{count=true, pageNum=2, pageSize=4, startRow=4, endRow=8, total=10, pages=3, reasonable=false, pageSizeZero=false}
+    [Emp{eid=9, empName='张三3', age=null, sex='男', email='123@qq.com', did=null}, 
+    Emp{eid=10, empName='张三4', age=null, sex='男', email='123@qq.com', did=null}, 
+    Emp{eid=11, empName='张三1', age=null, sex='男', email='123@qq.com', did=null}, 
+    Emp{eid=12, empName='张三2', age=null, sex='男', email='123@qq.com', did=null}], 
+    prePage=1, nextPage=3, isFirstPage=false, isLastPage=false, hasPreviousPage=true, hasNextPage=true, navigatePages=5, navigateFirstPage=1, navigateLastPage=3, 
+    navigatepageNums=[1, 2, 3]}
